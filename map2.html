@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [38.16, -96.96],
+              zoom: 4
+          });
+
+          L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 4,
+               minZoom: 4
+            }).addTo(map);
+            var universityIcon = L.icon({
+    iconUrl: 'pyramid.png', // url that links to the icon image file
+    iconSize:     [38, 38], // size of the icon image in pixels
+    iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+    popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+var universityIcon2 = L.icon({
+iconUrl: 'pyramids.png', // url that links to the icon image file
+iconSize:     [38, 38], // size of the icon image in pixels
+iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+var universityIcon3 = L.icon({
+iconUrl: 'pyramid2.png', // url that links to the icon image file
+iconSize:     [38, 38], // size of the icon image in pixels
+iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+});
+            var marker1 = L.marker([41.98,-87.72], {icon: universityIcon}).addTo(map);
+            var marker2 = L.marker([27.56,-82.27], {icon: universityIcon2}).addTo(map);
+            var marker3 = L.marker([45.50,-73.57], {icon: universityIcon3}).addTo(map);
+            var pic1 = '<img src="https://assets.chicagoparkdistrict.com/s3fs-public/styles/558x314/public/images/locations/758522eedf464e63870163f3af950bd61.jpg?itok=l6od5Z9W" alt="Legion" width="250">';
+            var pic2 = '<img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/tampa-bay-skyline-sean-pavone.jpg" alt="Tampa" width="250">';
+            var pic3 = '<img src="https://315gqf1cb88e2qagu3f9xz91-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/353-Montreal.jpg" alt="Montreal" width="250">';
+                marker1.bindPopup('<p style="color:violet; font-weight:bold"> Live in Chicago </p>' + pic1);
+                marker2.bindPopup('<p style="color:seagreen; font-weight:bold"> Vacationed here in Tampa </p>' + pic2);
+                marker3.bindPopup('<p style="color:crimson; font-weight:bold"> Born here in Canada </p>' + pic3);
+        </script>
+   </body>
+</html>
